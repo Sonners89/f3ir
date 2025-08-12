@@ -6,6 +6,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 
+import home.games.f3ir.R;
+
 public class ImageAdapter extends BaseAdapter {
     private Context context;
     private int[][] board;
@@ -48,13 +50,14 @@ public class ImageAdapter extends BaseAdapter {
         // Временная заглушка (позже заменим на картинки)
         int resId;
         switch (gemType) {
-            case 0: resId = android.R.color.holo_red_light; break;
-            case 1: resId = android.R.color.holo_blue_light; break;
-            case 2: resId = android.R.color.holo_green_light; break;
-            case 3: resId = android.R.color.holo_orange_light; break;
-            case 4: resId = android.R.color.holo_purple; break;
-            default: resId = android.R.color.black; // Для -1 (пустые клетки)
+            case 0: resId = R.drawable.gem_red; break;
+            case 1: resId = R.drawable.gem_blue; break;
+            case 2: resId = R.drawable.gem_green; break;
+            case 3: resId = R.drawable.gem_yellow; break;
+            case 4: resId = R.drawable.gem_purple; break;
+            default: resId = R.drawable.empty; // Пустая клетка
         }
+        imageView.setImageResource(resId);
         imageView.setBackgroundResource(resId);
         return imageView;
     }
